@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Image Styling Practice</title>
+    <style>
+        /* 建立一個容器讓三張圖片可以橫向並排置中 */
+        .image-container {
+            display: flex;
+            justify-content: space-around; /* 讓圖片之間有均勻的間距 */
+            align-items: center;           /* 垂直置中對齊 */
+            width: 100%;
+            max-width: 1200px;             /* 限制最大寬度避免大螢幕跑版 */
+            margin: 50px auto;
+        }
+
+        /* --- 1. 左側圖片：圓角、無變形 --- */
+        .img-left {
+            width: 33%;
+            height: 300px;
+            border-radius: 18px;           /* radius 18px */
+            object-fit: cover;             /* no distortion 的關鍵 */
+        }
+
+        /* --- 2. 中間圖片：正圓、無變形 --- */
+        .img-middle {
+            width: 150px;                  /* 寬 150px */
+            height: 150px;                 /* 高 150px */
+            border-radius: 50%;            /* 簡報寫 border 150px，實務上用 50% 畫正圓最完美 */
+            object-fit: cover;             /* no distortion 的關鍵 */
+        }
+
+        /* --- 3. 右側圖片：強制變形 --- */
+        .img-right {
+            width: 33%;
+            height: 300px;                 /* 300px 高度 */
+            object-fit: fill;              /* distortion 的關鍵 (不寫這行也是同樣效果，因為是預設值) */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img class="img-left" src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Left Image">
+        
+        <img class="img-middle" src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Middle Image">
+        
+        <img class="img-right" src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Right Image">
+    </div>
+
+</body>
+</html>
+
