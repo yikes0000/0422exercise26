@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS 圖片樣式進階練習</title>
+
     <style>
         .image-container {
             display: flex;
@@ -13,32 +13,32 @@
             margin-top: 50px;
         }
 
-        /* --- 左側圖片：不變形，且對齊底部 --- */
+        /* no distortion */
         .img-left {
             width: 33%;
             height: 300px;
             border-radius: 18px;
             object-fit: cover;
-            /* 關鍵：調整對齊位置到底部，這樣鐵塔下半部就不會被切掉 */
+            
             object-position: center bottom; 
         }
 
-        /* --- 中間圖片：正圓 + 實體邊框 --- */
+        /* border */
         .img-middle {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            /* 加上 1px 的實心黑框 */
+        
             border: 1px solid #000000; 
-            box-sizing: border-box; /* 確保邊框不會把圖片撐大 */
+            box-sizing: border-box; 
         }
 
-        /* --- 右側圖片：維持變形效果 --- */
+        /*  distortion */
         .img-right {
             width: 33%;
             height: 300px;
-            object-fit: fill; /* 強制填滿導致變形 */
+            object-fit: fill; 
         }
     </style>
 </head>
